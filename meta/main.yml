@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Antonio J. García Lagar
+  description: Ansible role to perform some basic setup to execute other ansible roles.
+  license: MIT
+  min_ansible_version: 1.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+  categories:
+    - system
+dependencies: []
