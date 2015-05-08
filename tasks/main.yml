@@ -14,8 +14,19 @@
     key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   when: ajgarlag_bootstrap_add_current_user_key
 
-- name: setting up extra authorized key
+- name: setting up extra authorized keys
   authorized_key:
     user: "{{ ansible_user_id }}"
     key: "{{ item }}"
   with_items: ajgarlag_bootstrap_extra_authorized_keys
+
+- name: allowing SSH connections
+  ufw:
+    rule: allow
+    proto: tcp
+    port: 22
+
+- name: enabling ufw
+  ufw:
+    state: enabled
+  when: ajgarlag_bootstrap_ufw_enable

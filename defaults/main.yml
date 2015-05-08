@@ -4,9 +4,13 @@ ajgarlag_bootstrap_packages:
   - python-apt
   - python-pycurl
   - lsb-release
+  - fail2ban
+  - ufw
 
 ajgarlag_bootstrap_ssh_key_user: "{{ ansible_user_id }}"
 
 ajgarlag_bootstrap_add_current_user_key: yes
 
 ajgarlag_bootstrap_extra_authorized_keys: []
+
+ajgarlag_bootstrap_ufw_enable: yes

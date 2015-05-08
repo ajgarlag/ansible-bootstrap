@@ -1,6 +1,7 @@
 ---
 language: python
 python: "2.7"
+sudo: required
 
 install:
   # Install Ansible.
@@ -31,4 +32,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Check default packages are installed
-  - "dpkg -s python-apt && dpkg -s python-pycurl && dpkg -s lsb-release"
+  - "for package in python-apt python-pycurl lsb-release fail2ban ufw ; do dpkg -s $package; done"
+
+  # Check ufw is running
+  - "sudo service ufw status"
