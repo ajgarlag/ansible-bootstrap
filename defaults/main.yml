@@ -9,7 +9,7 @@ ajgarlag_bootstrap_packages:
 
 ajgarlag_bootstrap_ssh_key_user: "{{ ansible_user_id }}"
 
-ajgarlag_bootstrap_add_current_user_key: yes
+ajgarlag_bootstrap_add_current_user_key: no
 
 ajgarlag_bootstrap_extra_authorized_keys: []
 
