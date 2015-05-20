@@ -26,7 +26,9 @@
     proto: tcp
     port: 22
 
-- name: enabling ufw
-  ufw:
-    state: enabled
-  when: ajgarlag_bootstrap_ufw_enable
+- name: notifying ufw to enable
+  debug:
+    msg: "Checking var to enable ufw"
+  changed_when: ajgarlag_bootstrap_ufw_enable
+  notify:
+    - enable ufw
