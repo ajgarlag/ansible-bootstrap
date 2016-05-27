@@ -15,4 +15,6 @@ ajgarlag_bootstrap_extra_authorized_keys: []
 
 ajgarlag_bootstrap_disable_ssh_root_password_login: yes
 
+ajgarlag_bootstrap_disable_ssh_password_login: no
+
 ajgarlag_bootstrap_ufw_enable: yes

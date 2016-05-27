@@ -29,6 +29,15 @@
     - reload ssh
   when: '{{ ajgarlag_bootstrap_disable_ssh_root_password_login }}'
 
+- name: disabling SSH login with password
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    line: 'PasswordAuthentication no'
+    regexp: '^PasswordAuthentication '
+  notify:
+    - reload ssh
+  when: '{{ ajgarlag_bootstrap_disable_ssh_password_login }}'
+
 - name: allowing SSH connections
   ufw:
     rule: allow
