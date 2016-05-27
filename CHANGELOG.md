@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Support for ansible 2.0
+- Disable SSH login with password for root
 ### Removed
 - Drop support for Ubuntu and old Debian distributions
 - Drop support for ansible <2.0

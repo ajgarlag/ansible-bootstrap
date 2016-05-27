@@ -20,6 +20,15 @@
     key: '{{ item }}'
   with_items: '{{ ajgarlag_bootstrap_extra_authorized_keys }}'
 
+- name: disabling SSH root login with password
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    line: 'PermitRootLogin without-password'
+    regexp: '^PermitRootLogin '
+  notify:
+    - reload ssh
+  when: '{{ ajgarlag_bootstrap_disable_ssh_root_password_login }}'
+
 - name: allowing SSH connections
   ufw:
     rule: allow

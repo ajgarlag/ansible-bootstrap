@@ -1,0 +1,6 @@
+---
+# handlers file for ajgarlag.bootstrap
+- name: reload ssh
+  service:
+    name: ssh
+    state: reloaded
