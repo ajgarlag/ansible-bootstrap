@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Support for ansible 2.0
 - Disable by default SSH login with password for root
 - Allow to disable SSH password login for all users
+- Allow sudoer user creation
 ### Removed
 - Drop support for Ubuntu and old Debian distributions
 - Drop support for ansible <2.0

@@ -2,4 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ajgarlag.bootstrap
+    - role: ajgarlag.bootstrap
+      ajgarlag_bootstrap_sudoer_user: deploy

@@ -6,8 +6,13 @@ ajgarlag_bootstrap_packages:
   - lsb-release
   - fail2ban
   - ufw
+  - sudo
 
-ajgarlag_bootstrap_ssh_key_user: '{{ ansible_user_id }}'
+ajgarlag_bootstrap_sudoer_user: ''
+
+ajgarlag_bootstrap_sudoer_user_require_password: yes
+
+ajgarlag_bootstrap_ssh_key_user: '{{ ajgarlag_bootstrap_sudoer_user | default(ansible_user_id, true) }}'
 
 ajgarlag_bootstrap_add_current_user_key: no
 
