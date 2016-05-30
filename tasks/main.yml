@@ -5,3 +5,4 @@
 - include: ssh.yml
 - include: ufw.yml
 - include: aliases.yml
+- include: rkhunter.yml

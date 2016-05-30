@@ -19,6 +19,7 @@ Role Variables
 * **ajgarlag_bootstrap_ufw_enable**: Boolean flag to control if ufw firewall must be enabled by this role (defaults to `yes`).
 * **ajgarlag_bootstrap_aliases_to_root**: Array of usernames to alias to root email account (defaults to `[]`).
 * **ajgarlag_bootstrap_aliases_root_alias**: Email address where to redirect root emails (defaults to emtpy string).
+* **ajgarlag_bootstrap_rkhunter_directives**: Dictionary of rkhunter configuration directives (by default it only sets `ALLOW_SSH_ROOT_USER` directive).
 
 Example Playbook
 ----------------

@@ -1,0 +1,21 @@
+- name: installing rkhunter package
+  apt:
+    pkg: rkhunter
+    state: latest
+  notify:
+    - rkhunter propupd
+
+- name: configuring rkhunter
+  template:
+    src: etc/rkhunter.conf.local.j2
+    dest: /etc/rkhunter.conf.local
+  notify:
+    - rkhunter propupd
+
+- name: enabling rkhunter auto execution on APT
+  lineinfile:
+    dest: /etc/default/rkhunter
+    regexp: '^APT_AUTOGEN'
+    line: 'APT_AUTOGEN="true"'
+  notify:
+    - rkhunter propupd

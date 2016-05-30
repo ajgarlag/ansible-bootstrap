@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Allow to configure mail aliases
+- Install rkhunter
 
 ## [0.2.0] - 2016-05-30
 ### Added

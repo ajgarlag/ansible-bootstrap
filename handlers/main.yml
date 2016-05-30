@@ -2,3 +2,4 @@
 # handlers file for ajgarlag.bootstrap
 - include: ssh.yml
 - include: aliases.yml
+- include: rkhunter.yml
