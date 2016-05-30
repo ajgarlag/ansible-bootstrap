@@ -34,23 +34,21 @@
     key: '{{ item }}'
   with_items: '{{ ajgarlag_bootstrap_extra_authorized_keys }}'
 
-- name: disabling SSH root login with password
+- name: configuring SSH root login
   lineinfile:
     dest: /etc/ssh/sshd_config
-    line: 'PermitRootLogin without-password'
+    line: 'PermitRootLogin {%if ajgarlag_bootstrap_root_login == "without-password" %}without-password{% elif ajgarlag_bootstrap_root_login|bool %}yes{% else %}no{% endif %}'
     regexp: '^PermitRootLogin '
   notify:
     - reload ssh
-  when: ajgarlag_bootstrap_disable_ssh_root_password_login
 
-- name: disabling SSH login with password
+- name: configuring SSH password login
   lineinfile:
     dest: /etc/ssh/sshd_config
-    line: 'PasswordAuthentication no'
+    line: 'PasswordAuthentication {%if ajgarlag_bootstrap_password_login %}yes{% else %}no{% endif %}'
     regexp: '^PasswordAuthentication '
   notify:
     - reload ssh
-  when: ajgarlag_bootstrap_disable_ssh_password_login
 
 - name: allowing SSH connections
   ufw:
@@ -58,7 +56,6 @@
     proto: tcp
     port: 22
 
-- name: enabling ufw
+- name: setting ufw default state
   ufw:
-    state: enabled
-  when: ajgarlag_bootstrap_ufw_enable
+    state: '{%if ajgarlag_bootstrap_ufw_enable %}enabled{% else %}disabled{% endif %}'

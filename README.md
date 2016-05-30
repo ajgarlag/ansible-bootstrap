@@ -14,8 +14,8 @@ Role Variables
 * **ajgarlag_bootstrap_ssh_key_user**: User to add the SSH keys (defaults to `{{ajgarlag_bootstrap_sudoer_user}}` var if set, to `ansible_user_id` otherwise.).
 * **ajgarlag_bootstrap_add_current_user_key**: Boolean flag to control the addition of current user ssh key (defaults to `yes`).
 * **ajgarlag_bootstrap_extra_authorized_keys**: Array of extra SSH keys to add (defaults to `[]`).
-* **ajgarlag_bootstrap_disable_ssh_root_password_login**: Boolean flag to disable SSH root password login (defaults to `yes`).
-* **ajgarlag_bootstrap_disable_ssh_password_login**: Boolean flag to disable SSH password login for all users (defaults to `yes`).
+* **ajgarlag_bootstrap_root_login**: Controls how the root user can make SSH login. Allowed values are `yes`, `no` or `without-password` (defaults to `no`).
+* **ajgarlag_bootstrap_password_login**: Boolean flag to enables SSH password login (defaults to `no`).
 * **ajgarlag_bootstrap_ufw_enable**: Boolean flag to control if ufw firewall must be enabled by this role (defaults to `yes`).
 
 Example Playbook
