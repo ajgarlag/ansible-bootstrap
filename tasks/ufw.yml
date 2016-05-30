@@ -1,0 +1,14 @@
+- name: installing ufw package
+  apt:
+    pkg: ufw
+    state: latest
+
+- name: allowing SSH connections
+  ufw:
+    rule: allow
+    proto: tcp
+    port: 22
+
+- name: setting ufw default state
+  ufw:
+    state: '{%if ajgarlag_bootstrap_ufw_enable %}enabled{% else %}disabled{% endif %}'

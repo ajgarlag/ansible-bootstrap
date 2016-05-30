@@ -5,21 +5,19 @@ ajgarlag_bootstrap_packages:
   - python-pycurl
   - lsb-release
   - fail2ban
-  - ufw
-  - sudo
 
-ajgarlag_bootstrap_sudoer_user: ''
+ajgarlag_bootstrap_sudo_sudoer: ''
 
-ajgarlag_bootstrap_sudoer_user_require_password: yes
+ajgarlag_bootstrap_sudo_require_password: yes
 
-ajgarlag_bootstrap_ssh_key_user: '{{ ajgarlag_bootstrap_sudoer_user | default(ansible_user_id, true) }}'
+ajgarlag_bootstrap_ssh_key_user: '{{ ajgarlag_bootstrap_sudo_sudoer | default(ansible_user_id, true) }}'
 
-ajgarlag_bootstrap_add_current_user_key: yes
+ajgarlag_bootstrap_ssh_authorize_current_user_key: yes
 
-ajgarlag_bootstrap_extra_authorized_keys: []
+ajgarlag_bootstrap_ssh_extra_authorized_keys: []
 
-ajgarlag_bootstrap_root_login: no
+ajgarlag_bootstrap_ssh_allow_root_login: no
 
-ajgarlag_bootstrap_password_login: no
+ajgarlag_bootstrap_ssh_allow_password_login: no
 
 ajgarlag_bootstrap_ufw_enable: yes

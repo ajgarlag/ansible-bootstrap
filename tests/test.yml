@@ -3,4 +3,4 @@
   remote_user: root
   roles:
     - role: ajgarlag.bootstrap
-      ajgarlag_bootstrap_sudoer_user: deploy
+      ajgarlag_bootstrap_sudo_sudoer: deploy
