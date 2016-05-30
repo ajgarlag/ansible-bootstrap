@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.2.0] - 2016-05-30
 ### Added
 - Support for ansible 2.0
 - Disable by default SSH login with password for root
@@ -19,4 +21,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-27
 
-[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.1.0...master
+[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.0...master
+[0.2.0]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.1.0...0.2.0
