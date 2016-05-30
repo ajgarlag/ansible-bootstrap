@@ -21,3 +21,7 @@ ajgarlag_bootstrap_ssh_allow_root_login: no
 ajgarlag_bootstrap_ssh_allow_password_login: no
 
 ajgarlag_bootstrap_ufw_enable: yes
+
+ajgarlag_bootstrap_aliases_to_root: []
+
+ajgarlag_bootstrap_aliases_root_alias: ''

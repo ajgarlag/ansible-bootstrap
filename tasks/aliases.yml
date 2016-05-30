@@ -1,0 +1,17 @@
+- name: aliasing email accounts to root
+  lineinfile:
+    dest: /etc/aliases
+    regexp: "^{{item}}:"
+    line: "{{item}}: root"
+  with_items: '{{ ajgarlag_bootstrap_aliases_to_root }}'
+  notify:
+    - newaliases
+
+- name: aliasing root email account
+  lineinfile:
+    dest: /etc/aliases
+    regexp: "^root:"
+    line: "root: {{ ajgarlag_bootstrap_aliases_root_alias }}"
+  notify:
+    - newaliases
+  when: ajgarlag_bootstrap_aliases_root_alias != ''
