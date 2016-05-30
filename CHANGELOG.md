@@ -8,6 +8,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Disable by default SSH login with password for root
 - Allow to disable SSH password login for all users
 - Allow sudoer user creation
+- Copy current local user SSH key by default
+- Disable SSH password login by default
 ### Removed
 - Drop support for Ubuntu and old Debian distributions
 - Drop support for ansible <2.0
