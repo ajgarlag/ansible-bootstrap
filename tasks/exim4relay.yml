@@ -1,0 +1,22 @@
+---
+- name: installing exim4
+  apt:
+    pkg: exim4
+    state: latest
+
+- name: configuring exim4 smarthost
+  lineinfile:
+    dest: /etc/exim4/update-exim4.conf.conf
+    line: dc_smarthost='{{ ajgarlag_bootstrap_exim4relay_host }}:{{ ajgarlag_bootstrap_exim4relay_port }}'
+    regexp: '^dc_smarthost='
+  notify:
+    - restart exim4
+  when: ajgarlag_bootstrap_exim4relay_host != ''
+
+- name: setting SMTP credentials
+  lineinfile:
+    dest: /etc/exim4/passwd.client
+    line: '{{item.key}}:{{item.value.user}}:{{item.value.password}}'
+  with_dict: '{{ajgarlag_bootstrap_exim4relay_credentials}}'
+  notify:
+    - restart exim4

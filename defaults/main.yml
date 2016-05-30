@@ -28,3 +28,14 @@ ajgarlag_bootstrap_aliases_root_alias: ''
 
 ajgarlag_bootstrap_rkhunter_directives:
   ALLOW_SSH_ROOT_USER: '{%if ajgarlag_bootstrap_ssh_allow_root_login|bool or ajgarlag_bootstrap_ssh_allow_root_login == "without-password" %}yes{% else %}no{% endif %}'
+
+ajgarlag_bootstrap_exim4relay: yes
+
+ajgarlag_bootstrap_exim4relay_host: ''
+
+ajgarlag_bootstrap_exim4relay_port: 25
+
+ajgarlag_bootstrap_exim4relay_credentials: {}
+#  "*.google.com":
+#    user: SMTPAccountName@gmail.com
+#    password: y0uRpaSsw0RD

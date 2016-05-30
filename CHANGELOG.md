@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Allow to configure mail aliases
 - Install rkhunter
+- Optional configuration of exim4 with smarthost relay
 
 ## [0.2.0] - 2016-05-30
 ### Added
