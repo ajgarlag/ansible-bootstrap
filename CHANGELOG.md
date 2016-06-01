@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Set exim4 configuration type to satellite
+- Set `/bin/bash` shell for sudoer user
 
 ## [0.2.1] - 2016-05-31
 

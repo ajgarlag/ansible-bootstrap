@@ -6,6 +6,7 @@
 - name: creating sudoer user
   user:
     name: '{{ ajgarlag_bootstrap_sudo_sudoer }}'
+    shell: /bin/bash
   when: ajgarlag_bootstrap_sudo_sudoer != ""
 
 - name: adding user as sudoer
