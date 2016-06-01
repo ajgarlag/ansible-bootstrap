@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- Set exim4 configuration type to satellite
+
 ## [0.2.1] - 2016-05-31
 
 ### Added
