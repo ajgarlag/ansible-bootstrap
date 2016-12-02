@@ -20,5 +20,4 @@
     line: "root: {{ ajgarlag_bootstrap_aliases_root_alias }}"
   notify:
     - newaliases
-  when: ajgarlag_bootstrap_aliases_root_alias != ''
-  when: etc_aliases.stat.exists
+  when: etc_aliases.stat.exists and ajgarlag_bootstrap_aliases_root_alias != ''
