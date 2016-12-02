@@ -22,10 +22,6 @@ ajgarlag_bootstrap_ssh_allow_password_login: no
 
 ajgarlag_bootstrap_ufw_enable: yes
 
-ajgarlag_bootstrap_aliases_to_root: []
-
-ajgarlag_bootstrap_aliases_root_alias: ''
-
 ajgarlag_bootstrap_rkhunter_directives:
   ALLOW_SSH_ROOT_USER: '{%if ajgarlag_bootstrap_ssh_allow_root_login|bool or ajgarlag_bootstrap_ssh_allow_root_login == "without-password" %}yes{% else %}no{% endif %}'
 
@@ -39,3 +35,7 @@ ajgarlag_bootstrap_exim4relay_credentials: {}
 #  "*.google.com":
 #    user: SMTPAccountName@gmail.com
 #    password: y0uRpaSsw0RD
+
+ajgarlag_bootstrap_aliases_to_root: []
+
+ajgarlag_bootstrap_aliases_root_alias: ''

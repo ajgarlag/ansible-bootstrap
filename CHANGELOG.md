@@ -4,9 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Tasks related to `exim4` are executed before that tasks related to `/etc/aliases`
+
 ### Fixed
 - Set exim4 configuration type to satellite
 - Set `/bin/bash` shell for sudoer user
+- Check that `/etc/aliases` exists before to any modification
 
 ## [0.2.1] - 2016-05-31
 

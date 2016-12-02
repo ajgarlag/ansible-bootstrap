@@ -17,13 +17,13 @@ Role Variables
 * **ajgarlag_bootstrap_ssh_allow_root_login**: Controls how the root user can make SSH login. Allowed values are `yes`, `no` or `without-password` (defaults to `no`).
 * **ajgarlag_bootstrap_ssh_allow_password_login**: Boolean flag to enables SSH password login (defaults to `no`).
 * **ajgarlag_bootstrap_ufw_enable**: Boolean flag to control if ufw firewall must be enabled by this role (defaults to `yes`).
-* **ajgarlag_bootstrap_aliases_to_root**: Array of usernames to alias to root email account (defaults to `[]`).
-* **ajgarlag_bootstrap_aliases_root_alias**: Email address where to redirect root emails (defaults to emtpy string).
 * **ajgarlag_bootstrap_rkhunter_directives**: Dictionary of rkhunter configuration directives (by default it only sets `ALLOW_SSH_ROOT_USER` directive).
 * **ajgarlag_bootstrap_exim4relay**: Boolean flag to enable exim4 satellite with smarthost relay (defaults to `yes`).
 * **ajgarlag_bootstrap_exim4relay_host**: Smarthost name or IP (defaults to empty string).
 * **ajgarlag_bootstrap_exim4relay_port**: Smarthost port (defaults to `25`).
 * **ajgarlag_bootstrap_exim4relay_credentials**: Dictionary with credentias for smarthost connection (defaults to `{}`, see [defaults/main.yml](defaults/main.yml)).
+* **ajgarlag_bootstrap_aliases_to_root**: Array of usernames to alias to root email account (defaults to `[]`).
+* **ajgarlag_bootstrap_aliases_root_alias**: Email address where to redirect root emails (defaults to emtpy string).
 
 Example Playbook
 ----------------

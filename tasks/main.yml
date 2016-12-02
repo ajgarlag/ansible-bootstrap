@@ -4,7 +4,7 @@
 - include: sudo.yml
 - include: ssh.yml
 - include: ufw.yml
-- include: aliases.yml
 - include: rkhunter.yml
 - include: exim4relay.yml
   when: ajgarlag_bootstrap_exim4relay
+- include: aliases.yml

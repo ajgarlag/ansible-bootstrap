@@ -1,9 +1,15 @@
+- name: checks if /etc/aliases exists
+  stat:
+    path: /etc/aliases
+  register: etc_aliases
+
 - name: aliasing email accounts to root
   lineinfile:
     dest: /etc/aliases
     regexp: "^{{item}}:"
     line: "{{item}}: root"
   with_items: '{{ ajgarlag_bootstrap_aliases_to_root }}'
+  when: etc_aliases.stat.exists
   notify:
     - newaliases
 
@@ -15,3 +21,4 @@
   notify:
     - newaliases
   when: ajgarlag_bootstrap_aliases_root_alias != ''
+  when: etc_aliases.stat.exists
