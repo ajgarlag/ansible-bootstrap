@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.2] - 2016-12-02
+
 ### Changed
 - Tasks related to `exim4` are executed before that tasks related to `/etc/aliases`
 
@@ -40,6 +42,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-27
 
-[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.1...master
+[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.2...master
+[0.2.1]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.1.0...0.2.0
