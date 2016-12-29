@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.3] - 2016-12-29
+
 ### Fixed
 - Remove duplicate when key in `aliases.yml` tasks
 
