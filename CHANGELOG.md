@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
  - Add `logwatch` and `unattended-upgrades` to default packages list
+ - Support multivalued rkhunter directives
 
 ### Changed
  - Use python3 version of packages
