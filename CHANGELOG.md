@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+ - Add `logwatch` and `unattended-upgrades` to default packages list
+
 ## [0.2.3] - 2016-12-29
 
 ### Fixed

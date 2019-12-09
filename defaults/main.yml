@@ -1,10 +1,12 @@
 ---
 # defaults file for ajgarlag.bootstrap
 ajgarlag_bootstrap_packages:
+  - fail2ban
+  - logwatch
+  - lsb-release
   - python-apt
   - python-pycurl
-  - lsb-release
-  - fail2ban
+  - unattended-upgrades
 
 ajgarlag_bootstrap_sudo_sudoer: ''
 
