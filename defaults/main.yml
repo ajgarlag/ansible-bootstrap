@@ -4,8 +4,8 @@ ajgarlag_bootstrap_packages:
   - fail2ban
   - logwatch
   - lsb-release
-  - python-apt
-  - python-pycurl
+  - python3-apt
+  - python3-pycurl
   - unattended-upgrades
 
 ajgarlag_bootstrap_sudo_sudoer: ''
