@@ -1,5 +1,5 @@
 {% for name, value in ajgarlag_bootstrap_rkhunter_directives.items() %}
-{% if value is iterable %}
+{% if value is iterable and value is not string %}
 {% for each in value %}
 {{name}}={{each}}
 {% endfor %}
