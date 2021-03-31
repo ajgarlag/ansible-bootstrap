@@ -1,14 +1,14 @@
+- name: setting up authorized keys
+  authorized_key:
+    user: '{{ ajgarlag_bootstrap_ssh_key_user }}'
+    key: "{{ ajgarlag_bootstrap_ssh_extra_authorized_keys | join('\n') }}"
+    exclusive: yes
+
 - name: setting up current user authorized key
   authorized_key:
     user: '{{ ajgarlag_bootstrap_ssh_key_user }}'
     key: '{{ lookup("file", "~/.ssh/id_rsa.pub") }}'
   when: ajgarlag_bootstrap_ssh_authorize_current_user_key
-
-- name: setting up extra authorized keys
-  authorized_key:
-    user: '{{ ajgarlag_bootstrap_ssh_key_user }}'
-    key: '{{ item }}'
-  with_items: '{{ ajgarlag_bootstrap_ssh_extra_authorized_keys }}'
 
 - name: configuring SSH root login
   lineinfile:

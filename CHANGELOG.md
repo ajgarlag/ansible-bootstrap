@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.5] - 2021-03-31
+ - Clear previous SSH keys
+
 ## [0.2.4] - 2020-04-25
 
 ### Added
@@ -56,7 +59,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-27
 
-[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.4...master
+[unreleased]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.5...master
+[0.2.5]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.4...0.2.5
 [0.2.4]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/ajgarlag/ansible-bootstrap/compare/0.2.1...0.2.2
