@@ -1,0 +1,6 @@
+---
+# handlers file for ajgarlag.bootstrap
+- include_tasks: ssh.yml
+- include_tasks: aliases.yml
+- include_tasks: rkhunter.yml
+- include_tasks: exim4relay.yml

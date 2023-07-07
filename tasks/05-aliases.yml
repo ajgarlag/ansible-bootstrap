@@ -1,0 +1,23 @@
+- name: Check if /etc/aliases exists
+  ansible.builtin.stat:
+    path: /etc/aliases
+  register: etc_aliases
+
+- name: Set local email aliases to root
+  lineinfile:
+    dest: /etc/aliases
+    regexp: "^{{item}}:"
+    line: "{{item}}: root"
+  with_items: '{{ ajgarlag_bootstrap_aliases_local_to_root }}'
+  when: etc_aliases.stat.exists
+  notify:
+    - newaliases
+
+- name: Set root alias
+  lineinfile:
+    dest: /etc/aliases
+    regexp: "^root:"
+    line: "root: {{ ajgarlag_bootstrap_aliases_root_alias }}"
+  notify:
+    - newaliases
+  when: etc_aliases.stat.exists and ajgarlag_bootstrap_aliases_root_alias != ''

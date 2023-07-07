@@ -1,0 +1,23 @@
+- name: Set authorized key
+  ansible.posix.authorized_key:
+    user: '{{ ajgarlag_bootstrap_ssh_user }}'
+    key: '{{ ajgarlag_bootstrap_ssh_authorized_key }}'
+    state: present
+    exclusive: true
+  when: ajgarlag_bootstrap_ssh_user != '' and ajgarlag_bootstrap_ssh_authorized_key != ''
+
+- name: Configure ssh root login
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    line: 'PermitRootLogin {%if ajgarlag_bootstrap_ssh_permit_root_login == "without-password" %}without-password{% elif ajgarlag_bootstrap_ssh_permit_root_login|bool %}yes{% else %}no{% endif %}'
+    regexp: '^[\s#]*PermitRootLogin '
+  notify:
+    - reload ssh
+
+- name: Configure ssh password authentication
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    line: 'PasswordAuthentication {%if ajgarlag_bootstrap_ssh_password_authentication %}yes{% else %}no{% endif %}'
+    regexp: '^[\s#]*PasswordAuthentication '
+  notify:
+    - reload ssh

@@ -1,0 +1,34 @@
+- name: Install ufw package
+  ansible.builtin.apt:
+    name: ufw
+    state: latest
+
+- name: Configure ufw incoming policy
+  community.general.ufw:
+    direction: incoming
+    policy: '{{ ajgarlag_bootstrap_ufw_incoming_policy }}'
+  register: ajgarlag_bootstrap_ufw_incoming_policy_state
+
+- name: Configure ufw outgoing policy
+  community.general.ufw:
+    direction: outgoing
+    policy: '{{ ajgarlag_bootstrap_ufw_outgoing_policy }}'
+  register: ajgarlag_bootstrap_ufw_outgoing_policy_state
+
+- name: Configure ufw open ports
+  community.general.ufw:
+    rule: allow
+    direction: in
+    to_port: '{{ item.port }}'
+    proto: '{{ item.proto }}'
+  with_items: '{{ ajgarlag_bootstrap_ufw_open_to_ports }}'
+  register: ajgarlag_bootstrap_ufw_open_ports_state
+
+- name: Set ufw state
+  community.general.ufw:
+    state: '{%if ajgarlag_bootstrap_ufw_enable %}enabled{% else %}disabled{% endif %}'
+
+- name: Reload ufw if required
+  community.general.ufw:
+    state: reloaded
+  when: ajgarlag_bootstrap_ufw_incoming_policy_state is changed or ajgarlag_bootstrap_ufw_outgoing_policy_state is changed or ajgarlag_bootstrap_ufw_open_ports_state is changed

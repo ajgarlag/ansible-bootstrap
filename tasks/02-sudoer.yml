@@ -1,0 +1,20 @@
+- name: Install sudo package
+  ansible.builtin.apt:
+    name: sudo
+    state: latest
+
+- name: Create sudoer user
+  ansible.builtin.user:
+    name: '{{ ajgarlag_bootstrap_sudoer_username }}'
+    uid: '{{ ajgarlag_bootstrap_sudoer_uid }}'
+  when: ajgarlag_bootstrap_sudoer_username != ''
+
+- name: Add user as sudoer
+  ansible.builtin.copy:
+    content: |
+      {{ ajgarlag_bootstrap_sudoer_username }} ALL=(ALL) {%if not ajgarlag_bootstrap_sudoer_require_password%}NO{%endif%}PASSWD: ALL
+    dest: /etc/sudoers.d/{{ ajgarlag_bootstrap_sudoer_username }}
+    owner: root
+    group: root
+    mode: 0440
+  when: ajgarlag_bootstrap_sudoer_username != ''

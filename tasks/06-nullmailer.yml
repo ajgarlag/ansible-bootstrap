@@ -1,0 +1,23 @@
+- name: Install nullmailer packages
+  ansible.builtin.apt:
+    pkg:
+      - nullmailer
+      - mailutils
+    state: latest
+
+- name: Set nullmailer admin address
+  ansible.builtin.copy:
+    content: |
+      {{ ajgarlag_bootstrap_nullmailer_adminaddr }}
+    dest: /etc/nullmailer/adminaddr
+  when: ajgarlag_bootstrap_nullmailer_adminaddr != ''
+
+- name: Set nullmailer remotes
+  ansible.builtin.copy:
+    content: |
+      {{ ajgarlag_bootstrap_nullmailer_remotes }}
+    dest: /etc/nullmailer/remotes
+    owner: mail
+    group: mail
+    mode: 0600
+  when: ajgarlag_bootstrap_nullmailer_remotes != ''
