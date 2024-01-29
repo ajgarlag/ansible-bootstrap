@@ -3,7 +3,7 @@ galaxy_info:
   author: Antonio J. García Lagar
   description: Ansible role to perform some basic setup to execute other ansible roles.
   license: MIT
-  min_ansible_version: 2.2
+  min_ansible_version: 2.4
   platforms:
     - name: Debian
       versions:

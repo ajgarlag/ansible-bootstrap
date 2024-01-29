@@ -1,10 +1,10 @@
 ---
 # tasks file for ajgarlag.bootstrap
-- include: packages.yml
-- include: sudo.yml
-- include: ssh.yml
-- include: ufw.yml
-- include: rkhunter.yml
-- include: exim4relay.yml
+- include_tasks: packages.yml
+- include_tasks: sudo.yml
+- include_tasks: ssh.yml
+- include_tasks: ufw.yml
+- include_tasks: rkhunter.yml
+- include_tasks: exim4relay.yml
   when: ajgarlag_bootstrap_exim4relay
-- include: aliases.yml
+- include_tasks: aliases.yml
