@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: bootstrap
   author: Antonio J. García Lagar
   description: Ansible role to perform some basic setup to execute other ansible roles.
   license: MIT
