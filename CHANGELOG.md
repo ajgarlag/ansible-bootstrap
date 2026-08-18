@@ -4,8 +4,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## Changed
+### Added
+ - Add support for Debian 13 (trixie)
+
+### Changed
  - Change `whitout-password` to `prohibit-password`
+
+### Removed
+ - Remove support for Debian 10 (buster)
 
 ## [0.2.5] - 2021-03-31
 
