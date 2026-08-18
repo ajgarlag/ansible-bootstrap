@@ -4,7 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Changed
+ - Change `whitout-password` to `prohibit-password`
+
 ## [0.2.5] - 2021-03-31
+
+### Fixed
  - Clear previous SSH keys
 
 ## [0.2.4] - 2020-04-25

@@ -25,7 +25,7 @@ ajgarlag_bootstrap_ssh_allow_password_login: no
 ajgarlag_bootstrap_ufw_enable: yes
 
 ajgarlag_bootstrap_rkhunter_directives:
-  ALLOW_SSH_ROOT_USER: '{%if ajgarlag_bootstrap_ssh_allow_root_login|bool or ajgarlag_bootstrap_ssh_allow_root_login == "without-password" %}yes{% else %}no{% endif %}'
+  ALLOW_SSH_ROOT_USER: '{%if ajgarlag_bootstrap_ssh_allow_root_login|bool or ajgarlag_bootstrap_ssh_allow_root_login == "prohibit-password" %}yes{% else %}no{% endif %}'
 
 ajgarlag_bootstrap_exim4relay: yes
 

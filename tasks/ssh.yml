@@ -13,7 +13,7 @@
 - name: configuring SSH root login
   lineinfile:
     dest: /etc/ssh/sshd_config
-    line: 'PermitRootLogin {%if ajgarlag_bootstrap_ssh_allow_root_login == "without-password" %}without-password{% elif ajgarlag_bootstrap_ssh_allow_root_login|bool %}yes{% else %}no{% endif %}'
+    line: 'PermitRootLogin {%if ajgarlag_bootstrap_ssh_allow_root_login == "prohibit-password" %}prohibit-password{% elif ajgarlag_bootstrap_ssh_allow_root_login|bool %}yes{% else %}no{% endif %}'
     regexp: '^[\s#]*PermitRootLogin '
   notify:
     - reload ssh
